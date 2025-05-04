@@ -1,0 +1,88 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 13%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 196 100% 50%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 196 100% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground;
+  }
+
+  /* Finance-specific styling */
+  .stock-up {
+    @apply text-[hsl(var(--finance-up))];
+  }
+  
+  .stock-down {
+    @apply text-[hsl(var(--finance-down))];
+  }
+  
+  .finance-card {
+    @apply bg-card border border-border rounded-lg shadow-lg p-4;
+  }
+  
+  .currency-usd {
+    @apply text-[hsl(var(--finance-usd))];
+  }
+  
+  .currency-inr {
+    @apply text-[hsl(var(--finance-inr))];
+  }
+}
